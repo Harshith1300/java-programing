@@ -1,0 +1,55 @@
+import java.util.*;
+
+class Product {
+    private int productId;
+    private double price;
+
+    Product(int productId, double price) {
+        this.productId = productId;
+        this.price = price;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void displayDetails() {
+        System.out.println("Product Details Displayed");
+        System.out.println("Product ID: " + getProductId());
+        System.out.println("Price: " + getPrice());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int id = sc.nextInt();
+        double price = sc.nextDouble();
+
+        Product p = new Product(id, price);
+
+        System.out.println("Product Record Created");
+
+        double newPrice = sc.nextDouble();
+        p.setPrice(newPrice);
+
+        System.out.println("Product Record Updated");
+
+        int searchId = sc.nextInt();
+
+        if (searchId == p.getProductId()) {
+            p.displayDetails();
+        }
+
+        sc.close();
+    }
+}
