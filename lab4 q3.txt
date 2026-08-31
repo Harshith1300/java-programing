@@ -1,0 +1,30 @@
+import java.util.*;
+
+class College {
+    static String collegeName = "Alliance University";
+
+    private String studentName;
+
+    College(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void displayCollege() {
+        System.out.println("College Name Displayed");
+        System.out.println("Student: " + studentName);
+        System.out.println("College Name: " + collegeName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.next();
+
+        College c = new College(name);
+        c.displayCollege();
+
+        sc.close();
+    }
+}
